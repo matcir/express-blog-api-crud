@@ -6,7 +6,11 @@ const port = process.env.port || 3000;
 
 //index
 router.get("/", (req, res) => {
-  res.json(posts);
+  let filteredPosts = posts;
+  if (req.query.tag) {
+    filteredPosts = posts.filter((post) => post.tags.includes(req.query.tag));
+  }
+  res.json(filteredPosts);
 });
 
 //show
