@@ -10,6 +10,9 @@ router.get("/", postController.index);
 //show
 router.get("/:id", postController.show);
 
+//store
+router.post("/", postController.store);
+
 //destroy
 router.delete("/:id", postController.destroy);
 

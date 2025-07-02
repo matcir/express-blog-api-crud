@@ -3,8 +3,8 @@ const app = express();
 const port = process.env.port || 3000;
 const postRouter = require("./routers/posts");
 
+app.use(express.json());
 app.use(express.static("public"));
-
 app.use("/api/posts", postRouter);
 
 app.listen(port, () => {

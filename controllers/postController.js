@@ -36,4 +36,23 @@ function destroy(req, res) {
   res.sendStatus(204);
 }
 
-module.exports = { index, show, destroy };
+function store(req, res) {
+  //creo un nuovo id incrementando l'id dell'ultimo elemento dell'array
+  const newId = posts[posts.length - 1].id + 1;
+
+  //creo il nuovo post
+  const newPost = {
+    id: newId,
+    title: req.body.title,
+    content: req.body.content,
+    image: req.body.image,
+    tags: req.body.tags,
+  };
+
+  posts.push(newPost);
+  console.log(posts);
+
+  res.status(201).json(newPost);
+}
+
+module.exports = { index, show, destroy, store };
