@@ -65,7 +65,7 @@ function update(req, res) {
     });
   }
 
-  //aggiorno la pizza
+  //aggiorno i posts
   post.title = req.body.title;
   post.content = req.body.content;
   post.image = req.body.image;
