@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = process.env.port || 3000;
 const postRouter = require("./routers/posts");
-const routeNotFound = require("./middlewares/routesHandler");
+const routeNotFound = require("./middlewares/routeNotFound");
 const serverErrorHandler = require("./middlewares/serverErrorHandler");
 
 app.use(express.json());
